@@ -4,7 +4,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = 'e671f86b7c1b606e47686778ba8410e80d341e102225ee28cceb7dbe0af558f3de51ac5a9d0495573c6c4439f1fe54b187ba9957f86328d6641b9c66a6cdbbb8'
+  config.secret_key = '5ac74525f874c8c5fd3827061a41d1af0c24750874338e18305a1e5f6f8e2ba2b632641b9c5226a65a47d5a335df87dc69f1ff887ffd27992e83bb4964cf78fc'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -97,7 +97,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '7d4b78f02b6cdff5a5392b3836a5387e4e81be87c86ae3ff0ed3977b8c59b34a1fcde06bd85ca7d1ee53bc442ae2bf3a426929b2a17887f3ab5891085d110369'
+  config.pepper = '7d4b78f02b6cdff5a5392b3836a5387e4e81be87c86ae3ff0ed3977b8c59b34a1fcde06bd85ca7d1ee53bc442ae2bf3a426929b2a17887f3ab5891085d110369'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -205,7 +205,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+  config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
@@ -213,7 +213,7 @@ Devise.setup do |config|
 
   # Set this configuration to false if you want /users/sign_out to sign out
   # only the current scope. By default, Devise signs out all scopes.
-  # config.sign_out_all_scopes = true
+  config.sign_out_all_scopes = false
 
   # ==> Navigation configuration
   # Lists the formats that should be treated as navigational. Formats like

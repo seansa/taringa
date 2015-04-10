@@ -1,8 +1,25 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!
 
-	def new
-		@post = current_user.posts.bild
+	def index
+		@posts = current_user.posts
 	end
-	
+
+	def new
+		@post = current_user.posts.build
+	end
+
+	def create
+		@post = current_user.posts.build(post_params)
+		if @post.save
+			redirect_to posts_path
+		else
+			render :new
+		end
+	end
+	protected
+
+	def post_params
+		params.require(:post).permit(:title, :body, :tag_list)
+	end
 end

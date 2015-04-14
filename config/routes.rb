@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   	resources :comments
   end
   root 'home#index'
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :admin_user, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
 

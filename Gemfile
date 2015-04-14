@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.0'
 gem 'sqlite3'
-gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
@@ -15,7 +14,16 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'sass-rails', github: 'rails/sass-rails'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'will_paginate'
 gem 'decent_exposure'
+gem 'kaminari'

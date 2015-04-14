@@ -1,17 +1,17 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!
 
+	expose(:posts, ancestor: :current_user)
+	expose(:post, attributes: :post_params)
+
 	def index
-		@posts = current_user.posts
 	end
 
 	def new
-		@post = current_user.posts.build
 	end
 
 	def create
-		@post = current_user.posts.build(post_params)
-		if @post.save
+		if post.save
 			redirect_to posts_path
 		else
 			render :new
@@ -22,4 +22,7 @@ class PostsController < ApplicationController
 	def post_params
 		params.require(:post).permit(:title, :body, :tag_list)
 	end
+
+	#comentarios con expose.
+	#Implementar ActiveAdmin para listar Usuarios y Post.
 end

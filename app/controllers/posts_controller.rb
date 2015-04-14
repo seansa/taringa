@@ -3,11 +3,15 @@ class PostsController < ApplicationController
 
 	expose(:posts, ancestor: :current_user)
 	expose(:post, attributes: :post_params)
+	expose(:comment, attributes: :current_user)
 
 	def index
 	end
 
 	def new
+	end
+
+	def show
 	end
 
 	def create

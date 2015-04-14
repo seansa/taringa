@@ -9,6 +9,7 @@ class AdminUser < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :post
+  has_many :user
   
   after_create { |admin| admin.send_reset_password_instructions }
  
